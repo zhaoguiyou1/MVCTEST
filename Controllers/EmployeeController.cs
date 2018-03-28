@@ -8,7 +8,7 @@ using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
-    public class TestController : Controller
+    public class EmployeeController : Controller
     {
         // GET: Test
         //public ActionResult Index()
@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers
         //    return View();
         //}
 
-        public ActionResult GetView()
+        public ActionResult Index()
         {
             EmployeeListViewModel employeeListViewModel = new EmployeeListViewModel();
             EmployeeBusinessLayer empBal = new EmployeeBusinessLayer();
@@ -37,10 +37,26 @@ namespace WebApplication1.Controllers
                 }
                 empViewModels.Add(empViewModel);
                 employeeListViewModel.Employees = empViewModels;
-                employeeListViewModel.UserName = "Admin";
+               
 
             }
-            return View("MyView", employeeListViewModel);
+            return View("Index", employeeListViewModel);
+        }
+
+        public ActionResult AddNew()
+        {
+            return View("CreateEmployee");
+        }
+        public ActionResult SaveEmployee(Employee e, string BtnSubmit)
+        {
+            switch (BtnSubmit)
+            {
+                case "Save Employee":
+                    return Content(e.FirstName + "|" + e.LastName + "|" + e.Salary);
+                case "Cancel":
+                    return RedirectToAction("Index");
+            }
+            return new EmptyResult();
         }
     }
 }
