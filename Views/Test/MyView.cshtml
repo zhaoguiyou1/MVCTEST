@@ -1,10 +1,11 @@
 ﻿
 @{
-                /**/
+    /**/
 
-                Layout = null;
+    Layout = null;
 }
-@model WebApplication1.Models.Employee
+@using WebApplication1.ViewModels
+@model EmployeeViewModel
 <!DOCTYPE html>
 
 <html>
@@ -13,24 +14,15 @@
     <title>MyView</title>
 </head>
 <body>
+    Hello @Model.UserName
+    <hr />
     <div>
-        
+        <b>Employee Details</b><br />
+        Employee Name : @Model.EmployeeName <br />
+                                            <span style="background-color:@Model.SalaryColor">
+                                                Employee Salary: @Model.Salary
+                                            </span>
 
-        Employee Details
-        Employee Name : @Model.FirstName @Model.LastName
-
-        @if (Model.Salary > 15000)
-    {
-        <span style="background-color:yellow">
-            Employee Salary: @Model.Salary.ToString("C")
-        </span>
-}
-else
-{
-        <span style="background-color:green">
-            Employee Salary: @Model.Salary.ToString("C")
-        </span>
-            }
 </div>
 </body>
 </html>
