@@ -47,3 +47,7 @@ E:\,NET\Second Time\WebApplication1\WebApplication1\obj\Debug\WebApplication1.cs
 E:\,NET\Second Time\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
 E:\,NET\Second Time\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 E:\,NET\Second Time\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+E:\,NET\Second Time\WebApplication1\WebApplication1\bin\EntityFramework.dll
+E:\,NET\Second Time\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+E:\,NET\Second Time\WebApplication1\WebApplication1\bin\EntityFramework.xml
+E:\,NET\Second Time\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
