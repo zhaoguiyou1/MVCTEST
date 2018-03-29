@@ -52,7 +52,9 @@ namespace WebApplication1.Controllers
             switch (BtnSubmit)
             {
                 case "Save Employee":
-                    return Content(e.FirstName + "|" + e.LastName + "|" + e.Salary);
+                    EmployeeBusinessLayer empBal = new EmployeeBusinessLayer();
+                    empBal.SaveEmployee(e);
+                    return RedirectToAction("Index");
                 case "Cancel":
                     return RedirectToAction("Index");
             }
