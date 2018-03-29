@@ -4,6 +4,8 @@
 }
 
 <!DOCTYPE html>
+@using WebApplication1.ViewModels
+@model CreateEmployeeViewModel
 <script>
     function ResetForm() {
         document.getElementById('TxtFName').value = "";
@@ -25,7 +27,7 @@
                         First Name:
                     </td>
                     <td>
-                        <input type="text" id="TxtFName" name="FirstName" value="" />
+                        <input type="text" id="TxtFName" name="FirstName" value="@Model.FirstName" />
                     </td>
                 </tr>
                 <tr>
@@ -39,7 +41,7 @@
                         Last Name:
                     </td>
                     <td>
-                        <input type="text" id="TxtLName" name="LastName" value="" />
+                        <input type="text" id="TxtLName" name="LastName" value="@Model.LastName" />
                     </td>
                 </tr>
                 <tr>
@@ -53,7 +55,7 @@
                         Salary:
                     </td>
                     <td>
-                        <input type="text" id="TxtSalary" name="Salary" value="" />
+                        <input type="text" id="TxtSalary" name="Salary" value="@Model.Salary" />
                     </td>
                 </tr>
                 <tr>
@@ -70,7 +72,7 @@
                     </td>
                 </tr>
             </table>
-            </form>
+        </form>
     </div>
 </body>
 </html>

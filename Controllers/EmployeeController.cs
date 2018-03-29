@@ -45,7 +45,7 @@ namespace WebApplication1.Controllers
 
         public ActionResult AddNew()
         {
-            return View("CreateEmployee");
+            return View("CreateEmployee", new CreateEmployeeViewModel());
         }
         public ActionResult SaveEmployee(Employee e, string BtnSubmit)
         {
@@ -60,7 +60,18 @@ namespace WebApplication1.Controllers
                      }
                     else
                     {
-                        return View("CreateEmployee");
+                        CreateEmployeeViewModel vm = new CreateEmployeeViewModel();
+                        vm.FirstName = e.FirstName;
+                        vm.LastName = e.LastName;
+                        if (e.Salary.ToString ()!="" )
+                        {
+                            vm.Salary = e.Salary.ToString();
+                        }
+                        else
+                        {
+                            vm.Salary = ModelState["Salary"].Value.AttemptedValue;
+                        }
+                        return View("CreateEmployee", vm);
                     }
                 case "Cancel":
                     return RedirectToAction("Index");
